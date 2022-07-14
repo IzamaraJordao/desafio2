@@ -50,11 +50,10 @@
       "id": 10
     },
     {
-      "id": 14,
-      "name": "Gerusa",
+      "age": "5",
+      "weight": "25",
       "type": "Gato",
-      "age": 1.5,
-      "weight": 25
+      "id": 14
     },
     {
       "name": "zeze",
@@ -118,6 +117,13 @@
       "age": 0,
       "weight": 0,
       "id": 27
+    },
+    {
+      "name": "Matheus",
+      "type": "Gato",
+      "age": 32,
+      "weight": 79,
+      "id": 28
     }
   ]
 }

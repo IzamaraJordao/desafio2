@@ -2,7 +2,7 @@ import "./Card.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import { useNavigate} from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 import { Editar } from "./Editar";
 
 
@@ -31,6 +31,9 @@ export function Card(props: any) {
     age: 0,
     weight: 0,
   });
+
+
+
   async function handleSubmit(event: any) {
     event.preventDefault();
     const response = axios.post("http://localhost:3000/pets", {
@@ -41,7 +44,8 @@ export function Card(props: any) {
     });
   }
 
-  
+
+
   useEffect(() => {
     const response = axios
       .get(`http://localhost:3000/pets`)
@@ -50,10 +54,16 @@ export function Card(props: any) {
       });
     console.log(response);
   }, []);
+
+
+  
   useEffect (() => {
     console.log("** handleInputChange ", formValues);
 
   },[]);
+
+
+
 
 
 
@@ -95,6 +105,7 @@ export function Card(props: any) {
 
 
 
+
    function handleDelete (id: number) {
     Swal.fire({
       title: 'Tem certeza que deseja excluir?',
@@ -111,16 +122,16 @@ export function Card(props: any) {
       } else if (result.isDenied) {
         Swal.fire('Cancelar', '', 'info')
       }
-    })
-    
-    
-
-    }
+    })}
   
+
+
   const navigate = useNavigate()
+
   function handleEdit(event:any) {
     event.preventDefault();
     navigate(`/edit/${formValues.id}`);
+
   }
   return (
     <div className="card">
@@ -179,7 +190,11 @@ export function Card(props: any) {
           <h6>Idade: {pet.age}</h6> 
          <h6>Peso: {pet.weight}</h6>
          <div>
-          <button type="button" className="btn btn-warning" onClick={()=>(handleEdit(pet.id))}>Editar</button>
+          <Link to={`/edit/${pet.id}`}>
+            <button type="button" className="btn btn-warning" onClick={()=>(handleEdit(pet.id))}>Editar</button>
+          </Link>
+
+
           <button type="button" className="btn btn-danger" onClick={() => (handleDelete(pet.id))}>Deletar</button>
           </div> 
           </h1>  
