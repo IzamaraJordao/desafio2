@@ -116,7 +116,7 @@
       "type": "Gato",
       "age": 3,
       "weight": 3,
-      "docil": false,
+      "docil": true,
       "id": 33
     }
   ]

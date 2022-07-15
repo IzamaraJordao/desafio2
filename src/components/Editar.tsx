@@ -69,7 +69,7 @@ export function Editar(props: any) {
         age: String(formValues.age),
         weight: String(formValues.weight),
         type: String(formValues.type),
-        docil: String(formValues.docil),
+        docil:Boolean(formValues.docil),
       })
       .then((response) => {
         setPets(pets.map((pet) => (pet.id === formValues.id ? formValues : pet)));
@@ -118,7 +118,7 @@ export function Editar(props: any) {
         </div>
         <label>Docil:</label>
         <div className="input">
-          <input type="checkbox" name="docil" checked={formValues.docil} />
+          <input type="checkbox" name="docil" checked={formValues.docil} onChange={handleInputChange} />
         </div>
         <div className="button">
           <button
