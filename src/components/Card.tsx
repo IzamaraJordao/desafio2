@@ -208,7 +208,7 @@ export function Card(props: any) {
           <input type="checkbox" name="docile" checked={formValues.docil}  onChange={() => handleDocile}/>
         </div>
         </div>
-        <div className="button">
+        <div className="botoes">
         <button type="submit"  className="btn btn-success" onClick={() => (handleSubmit())}>Salvar </button>
         <button type="button" className="btn btn-info" onClick={() =>(handleSearch())}> Buscar </button>
         </div>
@@ -232,7 +232,9 @@ export function Card(props: any) {
           <Link to={`/edit/${pet.id}`}>
             <button type="button" className="btn btn-warning" onClick={()=>(handleEdit(pet.id))}>Editar</button>
           </Link>
-          <button type="button" className="btn btn-danger" onClick={() => (handleDelete(pet.id))}>Deletar</button>
+          <a>
+              <button type="button" className="btn btn-danger" onClick={() => (handleDelete(pet.id))}>Deletar</button>
+          </a>
           </div> 
           </h1>  
           </div>

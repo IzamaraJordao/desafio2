@@ -1,0 +1,32 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 2px #333;
+}
+checkbox{
+    flex-direction: row;
+  
+}
+h3{
+    margin-top: 50px;
+    margin-bottom: 10px;
+
+}
+input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 2px #333;
+    padding-top: 2%;
+}
+
+.button-salvar{
+    padding-top: 3%;
+}

@@ -1,12 +1,12 @@
 {
   "pets": [
     {
-      "id": 2,
       "name": "Mia",
       "type": "Gato",
-      "age": 1.5,
+      "age": 3,
       "weight": 1,
-      "docil": true
+      "docil": true,
+      "id": 2
     },
     {
       "id": 3,
@@ -47,14 +47,6 @@
       "type": "Passaro",
       "id": 8,
       "docil": true
-    },
-    {
-      "name": "susana",
-      "type": "Gato",
-      "age": 1,
-      "weight": 2,
-      "id": 21,
-      "docil": false
     },
     {
       "name": "iza",

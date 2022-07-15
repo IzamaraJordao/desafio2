@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import './Editar.css';
 
 //função para editar o pet
 
@@ -122,10 +123,10 @@ export function Editar(props: any) {
           />
         </div>
         <label>Docil:</label>
-        <div className="input">
+        <div className="checkbox">
           <input type="checkbox" name="docil" checked={formValues.docil} onChange={handleDocile} />
         </div>
-        <div className="button">
+        <div className="button-salvar">
           <button
             type="button"
             className="btn btn-success"
