@@ -5,125 +5,119 @@
       "name": "Mia",
       "type": "Gato",
       "age": 1.5,
-      "weight": 1
+      "weight": 1,
+      "docil": true
     },
     {
       "id": 3,
       "name": "Milo",
       "type": "Hamster",
       "age": 0.2,
-      "weight": 0.5
+      "weight": 0.5,
+      "docil": true
     },
     {
       "id": 5,
       "name": "Marley",
       "type": "Cachorro",
       "age": 9,
-      "weight": 18
+      "weight": 18,
+      "docil": true
     },
     {
       "id": 6,
       "name": "Margarida",
       "type": "Hamster",
       "age": 1.5,
-      "weight": 0.25
+      "weight": 0.25,
+      "docil": true
     },
     {
       "name": "Filomena",
+      "age": "3",
+      "weight": "6",
       "type": "Passaro",
-      "age": "0",
-      "weight": "0",
-      "id": 7
+      "id": 7,
+      "docil": true
     },
     {
-      "id": 8,
       "name": "Piu-piu",
+      "age": "1",
+      "weight": "1",
       "type": "Passaro",
-      "age": 2,
-      "weight": 0.1
-    },
-    {
-      "name": "Florisbela",
-      "type": "",
-      "age": "0",
-      "weight": "0",
-      "id": 10
-    },
-    {
-      "age": "5",
-      "weight": "25",
-      "type": "Gato",
-      "id": 14
-    },
-    {
-      "name": "zeze",
-      "type": "Hamster",
-      "age": 2,
-      "weight": 0,
-      "id": 17
-    },
-    {
-      "name": "Birdy",
-      "type": "",
-      "age": 2,
-      "weight": 3,
-      "id": 19
-    },
-    {
-      "name": "Maia",
-      "type": "Gato",
-      "age": "2",
-      "weight": "3",
-      "id": 20
+      "id": 8,
+      "docil": true
     },
     {
       "name": "susana",
       "type": "Gato",
       "age": 1,
       "weight": 2,
-      "id": 21
+      "id": 21,
+      "docil": false
     },
     {
       "name": "iza",
       "type": "Gato",
       "age": 2,
       "weight": 2,
-      "id": 23
+      "id": 23,
+      "docil": true
     },
     {
       "name": "maria",
       "type": "Gato",
       "age": 2,
       "weight": 2,
-      "id": 24
-    },
-    {
-      "name": "",
-      "type": "Cachorro",
-      "age": 0,
-      "weight": 0,
-      "id": 25
-    },
-    {
-      "name": "",
-      "type": "Cachorro",
-      "age": 0,
-      "weight": 0,
-      "id": 26
-    },
-    {
-      "name": "",
-      "type": "Gato",
-      "age": 0,
-      "weight": 0,
-      "id": 27
+      "id": 24,
+      "docil": false
     },
     {
       "name": "Matheus",
       "type": "Gato",
       "age": 32,
       "weight": 79,
-      "id": 28
+      "id": 28,
+      "docil": true
+    },
+    {
+      "name": "Piu-piu",
+      "type": "Passaro",
+      "age": 2,
+      "weight": 2,
+      "id": 29,
+      "docil": true
+    },
+    {
+      "name": "mariazinha",
+      "type": "Gato",
+      "age": 0.2,
+      "weight": 1,
+      "id": 30
+    },
+    {
+      "name": "maria",
+      "type": "Gato",
+      "age": 2,
+      "weight": 2,
+      "docil": true,
+      "id": 31
+    },
+    {
+      "name": "maria",
+      "type": "Hamster",
+      "age": 2,
+      "weight": 1,
+      "docil": true,
+      "id": 32
+    },
+    {
+      "name": "xuxu",
+      "type": "Gato",
+      "age": 3,
+      "weight": 3,
+      "docil": false,
+      "id": 33
     }
   ]
 }

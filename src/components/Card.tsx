@@ -14,9 +14,11 @@ export type Pet = {
   type: string;
   age: number;
   weight: number;
+  docil: boolean;
 };
 
 export function Card(props: any) {
+  const navigate = useNavigate();
   function getPets(props: any) {
     if (props.id) if (props.name) return "Nome";
     if (props.type) return "Tipo";
@@ -24,28 +26,36 @@ export function Card(props: any) {
     return "";
   }
   const [pets, setPets] = useState<Pet[]>([]);
+
+  const [checkbox, setCheckbox] = useState<boolean>(false);
+
   const [formValues, setFormValues] = useState<Pet>({
     id : 0,
     name: "",
     type: "",
     age: 0,
     weight: 0,
+    docil: true,
   });
-
-
-
-  async function handleSubmit(event: any) {
-    event.preventDefault();
-    const response = axios.post("http://localhost:3000/pets", {
+  async function handleSubmit() {
+    await axios.post("http://localhost:3000/pets", {
       name: String(formValues.name),
       type: String(formValues.type),
       age: Number(formValues.age),
       weight: Number(formValues.weight),
+      docil: Boolean(formValues.docil),
     });
+      Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    navigate(-1)
+   
+    
   }
-
-
-
   useEffect(() => {
     const response = axios
       .get(`http://localhost:3000/pets`)
@@ -55,18 +65,10 @@ export function Card(props: any) {
     console.log(response);
   }, []);
 
-
-  
   useEffect (() => {
     console.log("** handleInputChange ", formValues);
 
   },[]);
-
-
-
-
-
-
   //fazendo a filtragem dos pets por nome ou tipo
   function handleSearch() {
     if (formValues.name){
@@ -124,10 +126,41 @@ export function Card(props: any) {
       }
     })}
   
+    //função para colocar o pet como docil ou não
+    function handleDocile(id: number,name: string,type: string,age: number,weight: number,docil: boolean) {
+      if(checkbox === false){
+          setCheckbox(true)
+         axios.put(`http://localhost:3000/pets/${id}`,{
+              id:id,
+              name:name,
+              type:type,
+              age:age,
+              weight:weight,
+              docil:true
+          });
+      }else{
+          setCheckbox(false)
+          axios.put(`http://localhost:3000/pets/${id}`,{
+              id:id,
+              name:name,
+              type:type,
+              age:age,
+              weight:weight,
+              docil:false
+          });
+      }
+      }
+
+  useEffect(() => {
+      if(checkbox === true){
+          setCheckbox(true)
+      }
+  },[])
+  
 
 
-  const navigate = useNavigate()
-
+    
+ 
   function handleEdit(event:any) {
     event.preventDefault();
     navigate(`/edit/${formValues.id}`);
@@ -170,17 +203,20 @@ export function Card(props: any) {
           value={formValues.weight}
           onChange={handleInputChange}
         />
-
+        <label>Docil?</label>
+        <div className="CheckBox">
+          <input type="checkbox" name="docile" checked={formValues.docil}  onChange={() => handleDocile}/>
+        </div>
         </div>
         <div className="button">
-        <button type="submit"  className="btn btn-success" onClick={handleSubmit}>Salvar </button>
+        <button type="submit"  className="btn btn-success" onClick={() => (handleSubmit())}>Salvar </button>
         <button type="button" className="btn btn-info" onClick={() =>(handleSearch())}> Buscar </button>
         </div>
       </div>
-
+      <div className="List-Pet">
       <table className="info" >
       {pets.map((pet) => (
-        <tr key={pet.id} >
+        <tbody key={pet.id} >
         <div className="card-group">
             <h1>
             <div className="card-header" >
@@ -189,19 +225,23 @@ export function Card(props: any) {
           <h6>Tipo: {pet.type}</h6>
           <h6>Idade: {pet.age}</h6> 
          <h6>Peso: {pet.weight}</h6>
+          <h6>Docil: {!!pet.docil ? "Sim" : "Não"}
+
+           </h6>
          <div>
           <Link to={`/edit/${pet.id}`}>
             <button type="button" className="btn btn-warning" onClick={()=>(handleEdit(pet.id))}>Editar</button>
           </Link>
-
-
           <button type="button" className="btn btn-danger" onClick={() => (handleDelete(pet.id))}>Deletar</button>
           </div> 
           </h1>  
           </div>
-        </tr>
+        </tbody>
       ))}
       </table>
+      </div>
     </div>
   );
-}
+
+
+ }
