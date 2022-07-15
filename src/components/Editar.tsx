@@ -55,7 +55,12 @@ export function Editar(props: any) {
    
     
   }
+  const handleDocile = (e: any) => {
 
+    setFormValues({ ...formValues, docil: e.target.checked });
+    
+  }
+  
   const handleInputChange = (event: any) => {
     const { name, value } = event.target;
     setFormValues({ ...formValues, [name]: value });
@@ -118,7 +123,7 @@ export function Editar(props: any) {
         </div>
         <label>Docil:</label>
         <div className="input">
-          <input type="checkbox" name="docil" checked={formValues.docil} onChange={handleInputChange} />
+          <input type="checkbox" name="docil" checked={formValues.docil} onChange={handleDocile} />
         </div>
         <div className="button">
           <button

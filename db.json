@@ -85,8 +85,8 @@
       "type": "Passaro",
       "age": 2,
       "weight": 2,
-      "id": 29,
-      "docil": true
+      "docil": false,
+      "id": 29
     },
     {
       "name": "mariazinha",
@@ -106,7 +106,7 @@
     {
       "name": "maria",
       "type": "Hamster",
-      "age": 2,
+      "age": 3,
       "weight": 1,
       "docil": true,
       "id": 32
@@ -118,6 +118,22 @@
       "weight": 3,
       "docil": true,
       "id": 33
+    },
+    {
+      "name": "frufru",
+      "type": "Passaro",
+      "age": 11,
+      "weight": 2,
+      "docil": false,
+      "id": 34
+    },
+    {
+      "name": "magalu",
+      "type": "Hamster",
+      "age": 2,
+      "weight": 1,
+      "docil": false,
+      "id": 35
     }
   ]
 }
